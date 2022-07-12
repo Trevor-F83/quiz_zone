@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container">
+    <div class="card-columns" style="padding: 10pxl; margin: 20px;">
+        <div class="card" align="centre" style="width: 30rem; border: 3px;">
+            <div class="card-body">
+                <h3 class="card-title">Score: {{score}}</h3>
+
+                <p class="card-text">Percentage: {{percentage}}%</p>
+                
+                <p class="card-text">Correct Answers: {{correct}}</p>
+                
+                <p class="card-text">Incorrect Answers: {{incorrect}}</p>
+                
+                <p class="card-text">Total Questions: {{total}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

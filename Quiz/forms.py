@@ -5,7 +5,8 @@ from django.contrib.auth.models import User
 
 class createUserform(UserCreationForm):
     class Meta:
-        model=Userfields=['username', 'password']
+        model=User
+        fields=['username', 'password']
 
 class addQuestionform(ModelForm):
     class Meta:

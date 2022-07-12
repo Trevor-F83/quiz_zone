@@ -1,0 +1,41 @@
+{% extends 'base.html' %} {% block content %}
+
+{% load static %}
+<div class="container">
+    <h1>Welcome to the Quiz Zone</h1>
+    <p>brought to you by ConTRoL Sea Studios</p>
+
+
+    <form action="" method="post">
+        {% csrf_token %}
+        {% for q in questions %}
+        <div class="form-group">
+            <label for="questions">{{ q.question }}</label>
+        </div>
+        <div class="form-check">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="{{ q.question }}" id="gridRadiosA" value="answerA" checked>
+                <label class="form-check-label" for="gridRadiosA">{{ q.answerA }}</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="{{ q.question }} id=gridRadiosB" value="answerB" checked>
+                <label class="form-check-label" for="gridRadiosB">{{ q.answerB }}</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="{{ q.question }}" id="gridRadiosC" value="answerC" checked>
+                <label class="form-check-label" for="gridRadiosC">{{ q.answerC }}</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="{{ q.question }}" id="gridRadiosD" value="answerD">
+                <label class="form-check-label" for="gridRadiosD">{{ q.answerD }}</label>
+            </div>
+            <br />
+        </div>
+        {% endfor %}
+        <br />
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+      
+</div>
+
+{% endblock %}
